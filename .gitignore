@@ -1,0 +1,14 @@
+node_modules
+
+# artifacts
+.DS_Store
+.svn
+*~
+*.swp
+*.rbc
+
+# sublime config
+*.sublime-project
+*.sublime-workspace
+
+npm-debug.log

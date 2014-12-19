@@ -1,1 +1,3 @@
 Welcome to the site.  {title}
+
+{@contextDump key="current" to="output"/}

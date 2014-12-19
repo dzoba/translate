@@ -1,6 +1,5 @@
 There has been an error
 
-
 {message}
 {error.status}
 {error.stack}
