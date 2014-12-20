@@ -1,6 +1,37 @@
-<html>
-  <head>
-    <title>{title}</title>
-  </head>
+<!DOCTYPE html>
+<html lang="en" {+htmlAttr/}>
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+  $(function(){
+    $('#translate').click(function(e){
+      e.preventDefault();
+      if($('#textEntry').val()) {
+        var url = '/api/process/' + $('#textEntry').val();
+        console.log("Submitted");
+        $.ajax({
+          url: url
+        }).done(function(data) {
+          console.log(data);
+          $('#translatedText').html('');
+          for(var key in data) {
+            $('#translatedText').append(data[key].count + data[key].img)
+          }
+        })
+      } else {
+        alert('Please enter some text');
+      }
 
-  <body>
+    });
+  });
+  </script>
+</head>
+<body>
+  Get ready for the body
+  {+body}
+    <h2>Oops something went wrong!</h2>
+  {/body}
+
+  {>"footer"/}
+</body>
+</html>

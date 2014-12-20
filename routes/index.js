@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var async = require('async');
+var retricon = require('retricon');
+var fmt = require('util').format;
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -69,7 +71,10 @@ router.get('/api/process/:string', function(req, res) {
       for (var i = 0; i < string.length; i++) {
         var search = string[i];
         var p = chars.find({letter: search}, {}, function(err, data) {
-          ret[data[0].letter] = data.length;
+          ret[data[0].letter] = {
+            count: data.length,
+            img: fmt("<img alt='kibo' src='%s' />", retricon(data[0].letter, {pixelSize: 16}).toDataURL())
+          };
         });
         p.complete();
       }
@@ -85,30 +90,3 @@ router.get('/api/process/:string', function(req, res) {
 });
 
 module.exports = router;
-
-
-
-
-// var q = chars.find({letter: string[i]}, {}, function(err, data) {
-//   if(data.length === 0) {
-//     console.log("The char is: " + search);
-//     console.log("Data length is zero");
-//     var p = chars.insert({
-//       letter: search,
-//       count: 1
-//     });
-//     p.complete(function(err){
-//       if (err) {
-//         console.log(err);
-//       }
-//     })
-//   } else {
-//     var p = chars.updateById(data[0]._id, {$set: {count: ++ data[0].count}});
-//     p.complete(function(err) {
-//       if (err) {
-//         console.log(err);
-//       }
-//     });
-//   }
-// });
-// q.complete();
