@@ -1,11 +1,9 @@
 $(function(){
-
-  debugger;
   var TranslateView = Backbone.View.extend({
     el: '.body-content',
 
     events: {
-      'click #translate' : 'translate'
+      'click #translate': 'translate'
     },
 
     initialize: function() {
@@ -17,7 +15,7 @@ $(function(){
 
       var userString = $('#textEntry').val();
 
-      if(userString) {
+      if (userString) {
         var url = '/api/process/' + userString;
         console.log("Submitted");
         $.ajax({
@@ -25,7 +23,7 @@ $(function(){
         }).done(function(data) {
           console.log(data);
           $('#translatedText').html('');
-          for(var i = 0; i < userString.length; i++) {
+          for (var i = 0; i < userString.length; i++) {
             $('#translatedText').append(data[userString[i]].count + data[userString[i]].img);
           }
         });
