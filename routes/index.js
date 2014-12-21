@@ -1,5 +1,3 @@
-'use strict';
-
 var express = require('express');
 var router = express.Router();
 var async = require('async');
@@ -11,11 +9,11 @@ router.get('/', function(req, res) {
   var db = req.db;
   var chars = db.get('chars');
 
-  chars.find({}, {}, function(err, data) {
+
     res.render('index', {
-      queries: data.length
+      tagline: 'Translate your text'
     });
-  });
+
 });
 
 /* API Access */

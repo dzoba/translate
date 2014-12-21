@@ -4,7 +4,7 @@
 <div class="container body-content">
   <div class="row">
     <div class="col-sm-12">
-      <h1>Welcome to the site.  {queries} Characters Translated</h1>
+      <h1>Welcome to the site. {tagline}</h1>
       <form>
         <input id="textEntry" type="text" placeholder="Type your text here" />
         <input id="translate" type="submit" value="Translate!">
