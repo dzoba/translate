@@ -9,8 +9,10 @@ router.get('/', function(req, res) {
   var db = req.db;
   var chars = db.get('chars');
 
-  res.render('index', {
-    title: 'Express'
+  chars.find({}, {}, function(err, data) {
+    res.render('index', {
+      queries: data.length
+    });
   });
 });
 

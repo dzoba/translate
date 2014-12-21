@@ -1,5 +1,9 @@
+{>"layout"/}
+
+{<body}
 There has been an error
 
-{message}
-{error.status}
-{error.stack}
+<p>{message}</p>
+<p>{error.status}</p>
+<p>{error.stack}</p>
+{/body}
