@@ -1,11 +1,13 @@
 {>"layout"/}
 
 {<body}
-<p>Welcome to the site.  {title}</p>
+<div class="container body-content">
+  <h1>Welcome to the site.  {title}</h1>
   <form>
     <input id="textEntry" type="text" placeholder="Type your text here" />
     <input id="translate" type="submit" value="Translate!">
   </form>
 
   <div id="translatedText"> </div>
+</div>
 {/body}

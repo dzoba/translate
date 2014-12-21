@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" {+htmlAttr/}>
 <head>
+  {! Jquery !}
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script>
-  $(function(){
-    $('#translate').click(function(e){
-      e.preventDefault();
-      if($('#textEntry').val()) {
-        var url = '/api/process/' + $('#textEntry').val();
-        console.log("Submitted");
-        $.ajax({
-          url: url
-        }).done(function(data) {
-          console.log(data);
-          $('#translatedText').html('');
-          for(var key in data) {
-            $('#translatedText').append(data[key].count + data[key].img)
-          }
-        })
-      } else {
-        alert('Please enter some text');
-      }
 
-    });
-  });
-  </script>
+  {! Underscore !}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+
+  {! Backbone !}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+
+  {! Bootstrap !}
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  {! Site CSS !}
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+
+  {!Page Specific CSS/JS!}
+  <script src="/javascripts/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
 </head>
 <body>
-  Get ready for the body
+  {>"header"/}
   {+body}
     <h2>Oops something went wrong!</h2>
   {/body}

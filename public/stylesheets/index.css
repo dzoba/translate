@@ -1,0 +1,9 @@
+.body-content {
+  padding-top: 60px;
+}
+.body-content #translate {
+  margin-left: 10px;
+}
+.body-content #translatedText {
+  margin-top: 20px;
+}
