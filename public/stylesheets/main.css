@@ -12,3 +12,8 @@ a {
   padding-top: 7px;
   background-color: #f5f5f5;
 }
+@media print {
+  .hide-on-print {
+    display: none;
+  }
+}

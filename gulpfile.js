@@ -4,11 +4,13 @@ var less = require('gulp-less');
 var path = require('path');
 
 var paths = {
-  views: 'client/*.js'
+  views: 'client/*.js',
+  less: 'less/*.less'
 };
 
 gulp.task('watch', function() {
   gulp.watch(paths.views, ['uglify']);
+  gulp.watch(paths.less, ['less']);
 });
 
 // Minify js

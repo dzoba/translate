@@ -71,8 +71,8 @@ router.get('/api/process/:string', function(req, res) {
         var search = string[i];
         var p = chars.find({letter: search}, {}, function(err, data) {
           ret[data[0].letter] = {
-            count: data.length,
-            img: fmt("<img alt='kibo' src='%s' />", retricon(data[0].letter, {pixelSize: 16}).toDataURL())
+            count: "<span class=\"hide-on-print\">" + data.length + "</span>",
+            img: fmt("<img title='" + data[0].letter + "' src='%s' />", retricon(data[0].letter, {pixelSize: 16}).toDataURL())
           };
         });
         p.complete();

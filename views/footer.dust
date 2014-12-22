@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer hide-on-print">
   <div class="container">
     <p class="text-muted">Footer!</p>
   </div>
