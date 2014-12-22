@@ -33,4 +33,8 @@ Dust is the templating engine, with the primary page template being in views/lay
 
 # Demo
 
+You can view a working demo app here: http://sonosmith.com:3000/
+
+Additionally, here is a short gif of the app in action:
+
 ![Translatio Demo](http://i.imgur.com/fLLY0PB.gif)
