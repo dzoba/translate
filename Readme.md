@@ -4,7 +4,7 @@ Translate Characters to Secret Runes, Oooh!
 
 # Setup
 
-Below are commands to initialize Translatio.  If you get an error while npm i'ing, see the second part.
+Below are commands to initialize Translatio.  If you get an error while npm i'ing, see the second part.  Ensure you have mongo (and of course node, npm, and gulp) installed to run this project.
 
 ```
 git clone https://github.com/dzoba/translate.git
@@ -20,7 +20,14 @@ brew install cairo
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 ```
 
-Also, ensure you have mongo (and of course node, npm, and gulp) installed to run this project.
+For Ubuntu, use these commands:
+
+```
+sudo apt-get update 
+sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+```
+
+For other OSes, refer here: https://github.com/Automattic/node-canvas/wiki
 
 # The highlights
 The app is a single page which translates characters in a text box to identicon 'runes' for the user.  The app makes use of Express and mongodb to create an API which the user input is passed over, and the runes and count of rune use is passed back to the client via ajax. API functions are stored in routes/index.js.
