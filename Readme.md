@@ -13,6 +13,7 @@ npm i
 gulp less; gulp uglify; npm start
 ```
 
+## Installing node-canvas / cairo
 If you get an error when doing npm i, it is most likely because of an issue with the node-canvas module.  Perform the following two steps on OSX to avoid this error:
 
 ```
